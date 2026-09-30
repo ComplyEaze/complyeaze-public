@@ -26,10 +26,15 @@ Use this policy for every non-trivial change before commit, PR, or deployment.
    and reason.
 6. Re-run focused checks.
 7. Run the full public gate.
-8. Before every commit, run a local Codex review over the complete intended
-   diff. Rectify valid findings and rerun affected checks before committing.
-9. After every push, request a current-head GitHub Codex review. Reply to and
-   resolve addressed threads, then repeat the loop for any valid finding.
+8. Before every commit, have fresh Claude reviewers (a Sonnet reviewer and an
+   Opus critic, each a new instance started without your working notes) review
+   the complete intended diff. Rectify valid findings and rerun affected checks
+   before committing.
+9. After every push, run a current-head review with both reviewers as new
+   instances. Record each reviewer's model, round, verdict (CLEAN or NOT CLEAN),
+   and findings in the PR's Review-Rectify table. Reply to and resolve addressed
+   threads, then repeat the loop for any valid finding. A GitHub Codex review is
+   not required.
 10. Link or cite the `public-site-build` and `public-visual-evidence` CI
    artifacts when the change affects routes, rendering, release evidence, or
    deployment posture.
@@ -50,8 +55,11 @@ git diff --check
 ```
 
 The GitHub `Review gate` status enforces unresolved review-thread and
-requested-changes blockers. It does not replace the review-rectify table in the
-pull request or the maintainer's current-diff review.
+requested-changes blockers only. It does not require any particular reviewer,
+and it does not verify the Claude reviewer verdicts: the author records those in
+the pull request, and the maintainer checks them. It does not replace the
+review-rectify table in the pull request or the maintainer's current-diff
+review.
 
 The GitHub `Public site gates` status should run the full public gate for every
 pull request and `master` push. A skipped or successful Pages deploy is not
