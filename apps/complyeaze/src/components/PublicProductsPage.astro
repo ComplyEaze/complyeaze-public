@@ -29,7 +29,7 @@ const { route } = Astro.props;
           <div><dt>Status</dt><dd>{product.status}</dd></div>
         </dl>
         <nav class="p4-comparison-row__actions" aria-label={`${product.name} actions`}>
-          <a class="p4-action p4-action--primary" href={product.href}>Continue to {product.name}</a>
+          {product.href && <a class="p4-action p4-action--primary" href={product.href}>Continue to {product.name}</a>}
           <a class="p4-action" href={product.evidence.href}>{product.evidence.label}</a>
         </nav>
       </article>

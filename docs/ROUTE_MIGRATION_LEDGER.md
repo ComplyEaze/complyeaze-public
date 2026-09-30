@@ -13,6 +13,12 @@ PR, and rollback evidence.
 Host-aware rows are intentional: Pack and Tools routes are root-relative on their
 own hosts, not `/pack/*` or `/tools/*` paths on `complyeaze.com`.
 
+Hosting note (2026-09-30): `complyeaze.com` is already served from this
+repository through GitHub Pages, and the owner approved search indexing of the
+pages marked `indexed` (see `docs/HOSTING_CUTOVER.md`). That does not change any
+row below: cleanup of private-app routes stays blocked until the hosted route
+evidence, redirect, and rollback columns are filled in.
+
 ## Root public pages
 
 - Source: Root public URLs on complyeaze.com: /, /resources/about-us, /resources/contact-us, /resources/privacy-policy, and /resources/terms-and-conditions

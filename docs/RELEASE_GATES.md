@@ -88,9 +88,11 @@ Each release should record:
 ## Deployment Posture
 
 - Static hosting is preferred unless a reviewed feature requires server runtime.
-- `Pages deploy` is readiness-only until `ENABLE_GITHUB_PAGES_DEPLOY=true`,
-  GitHub Pages is configured for GitHub Actions, and hosted route, canonical,
-  redirect, and rollback evidence is recorded.
+- `Pages deploy` runs only on `master` while `ENABLE_GITHUB_PAGES_DEPLOY=true`
+  and GitHub Pages is configured for GitHub Actions. `complyeaze.com` is served
+  this way. Evidence from a hosted route check, plus canonical, redirect, and
+  rollback evidence, is still required before any private-app route is removed
+  or redirected.
 - Hosted route evidence should write `test-results/hosted-routes/summary.json`
   and `test-results/hosted-routes/summary.md` for review.
 - The Pages workflow must run `pnpm verify` before deploying and may upload only

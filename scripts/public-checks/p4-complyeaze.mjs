@@ -13,9 +13,10 @@ export const p4ComplyEazePaths = [
 ];
 
 const expectedProductActions = new Map([
-  ["Axal", "https://axal.complyeaze.com/"],
+  ["Axal", undefined],
   ["Pack", "/products/pack/"],
   ["Tools", "/products/tools/"],
+  ["Bridge", "https://bridge.complyeaze.com/"],
 ]);
 
 const requiredSourceFiles = [

@@ -59,7 +59,10 @@ function isCurrentPrimaryNavItem(href: string, urlPath: string): boolean {
     <meta name="description" content={route.description} />
     <meta name="robots" content={route.robots} />
     <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ComplyEaze" />
     <meta property="og:title" content={route.title} />
+    <meta name="twitter:card" content="summary" />
     <meta property="og:description" content={route.description} />
     <meta property="og:url" content={canonical} />
     <script is:inline type="application/ld+json" set:html={schemaJson}></script>
@@ -86,7 +89,7 @@ function isCurrentPrimaryNavItem(href: string, urlPath: string): boolean {
   <body class:list={{ "p4-shell": isP4Route }}>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <p class="service-notice" role="status">
-      <strong>Axal is temporarily unavailable</strong> while we restore service. This website is unaffected.
+      <span data-nosnippet><strong>Axal is temporarily unavailable</strong> while we restore service. This website is unaffected.</span>
     </p>
     <header class="site-header">
       <div>

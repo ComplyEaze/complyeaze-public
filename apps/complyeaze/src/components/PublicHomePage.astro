@@ -55,13 +55,13 @@ const productSlug = (product: PublicProduct) => product.name.toLowerCase();
             </dd>
           </div>
           <div><dt>Saved to</dt><dd>This computer, Downloads</dd></div>
-          <div class="ce-slip__answer"><dt>Sent to ComplyEaze</dt><dd>Nothing</dd></div>
-          <div class="ce-slip__answer"><dt>Password read</dt><dd>No</dd></div>
+          <div class="ce-slip__answer"><dt>GST document uploaded</dt><dd>None</dd></div>
+          <div class="ce-slip__answer"><dt>Password captured</dt><dd>No</dd></div>
         </dl>
         <p class="ce-slip__sign">Checked by<span aria-hidden="true"></span></p>
       </div>
       <span class="ce-stamp ce-slip__stamp" aria-hidden="true">Saved locally<small>on your computer</small></span>
-      <figcaption id="slip-caption">Sample data. Pack saves the filed PDF to your computer and sends nothing to ComplyEaze.</figcaption>
+      <figcaption id="slip-caption">Sample data. Pack saves the filed PDF to your computer and uploads no GST document.</figcaption>
     </figure>
   </header>
 
@@ -85,7 +85,7 @@ const productSlug = (product: PublicProduct) => product.name.toLowerCase();
     <div class="ce-family__grid">
       {products.map((product) => (
         <article class={`ce-product ce-product--${productSlug(product)}`}>
-          <h3><a href={product.href}>{product.name}</a></h3>
+          <h3>{product.href ? <a href={product.href}>{product.name}</a> : product.name}</h3>
           <p class="ce-product__role">{product.role}</p>
           <p class="ce-product__job">{product.job}</p>
           <dl class="ce-product__facts">
@@ -130,8 +130,8 @@ const productSlug = (product: PublicProduct) => product.name.toLowerCase();
 
   <section class="ce-counterfoil" aria-labelledby="close-title">
     <div class="ce-counterfoil__body">
-      <h2 id="close-title">Start with the free tools.</h2>
-      <p>Pack and Tools need no account. Try them on one client this week.</p>
+      <h2 id="close-title">Start with Pack.</h2>
+      <p>Pack needs no account. Try it on one client this week.</p>
       <div class="ce-actions">
         <a class="ce-button" href={route.primaryAction.href}>{route.primaryAction.label}</a>
         <a class="ce-button ce-button--plain" href={route.secondaryAction.href}>{route.secondaryAction.label}</a>

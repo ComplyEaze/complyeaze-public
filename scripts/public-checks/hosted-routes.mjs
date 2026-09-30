@@ -33,7 +33,7 @@ const requiredScriptTerms = [
   "productionCutoverEvidence",
   "/robots.txt",
   "/sitemap.xml",
-  "review-only"
+  "discoverability"
 ];
 
 export function assertHostedRoutesPolicy(root) {

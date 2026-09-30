@@ -93,8 +93,8 @@ the documented governance posture.
 
 Workflow: `.github/workflows/pages-deploy.yml`
 
-Status: readiness-only. GitHub Pages currently is not treated as hosted cutover
-evidence.
+Status: live for `complyeaze.com`. A Pages deployment is still not treated as
+evidence for private-app route cleanup.
 
 The deploy job is disabled unless all of these are true:
 

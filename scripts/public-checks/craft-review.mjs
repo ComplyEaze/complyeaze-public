@@ -107,7 +107,7 @@ export async function assertCraftReviewSources(root) {
   }
 
   const sitemap = readFileSync(path.join(root, "apps/complyeaze/src/pages/sitemap.xml.ts"), "utf8");
-  if (!sitemap.includes('route.kind !== "public-craft-review"')) throw new Error("ComplyEaze sitemap must exclude craft review routes");
+  if (!sitemap.includes('route.discoverability === "indexed"')) throw new Error("ComplyEaze sitemap must exclude craft review routes");
   for (const layoutPath of ["apps/complyeaze/src/layouts/PublicPageLayout.astro", "apps/axal/src/layouts/AxalPageLayout.astro"]) {
     if (readFileSync(path.join(root, layoutPath), "utf8").includes('/review/craft/')) throw new Error(`${layoutPath}: primary navigation exposes craft review`);
   }

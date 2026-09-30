@@ -47,12 +47,22 @@ export interface PublicMigrationStep {
   label: string;
 }
 
+export type PublicDiscoverability = "indexed" | "unlisted" | "review-only";
+
+// One source of truth: the robots directive and the sitemap both follow discoverability.
+export const robotsByDiscoverability = {
+  indexed: "index, follow",
+  unlisted: "noindex, follow",
+  "review-only": "noindex, nofollow",
+} as const satisfies Record<PublicDiscoverability, string>;
+
 export interface PublicRouteBase {
   description: string;
+  discoverability: PublicDiscoverability;
   eyebrow: string;
   heading: string;
   kind: "adoption" | "evidence" | "gateway" | "home" | "migration" | "policy" | "products" | "public-craft-review" | "resource";
-  robots: "noindex, nofollow";
+  robots: (typeof robotsByDiscoverability)[PublicDiscoverability];
   sections: PublicSection[];
   signalTerms: string[];
   slug: string;
@@ -68,6 +78,7 @@ export interface PublicAdoptionRoute extends PublicRouteBase {
 export interface PublicCraftReviewRoute extends PublicRouteBase {
   discoverability: "review-only";
   kind: "public-craft-review";
+  robots: "noindex, nofollow";
   reviewEvidence: CraftReviewEvidence;
   slug: "review/craft";
   urlPath: "/review/craft/";
@@ -151,7 +162,15 @@ function validateRoute(value: unknown, label: string): asserts value is PublicRo
     );
     assert(slug === urlPath.slice(1, -1), `${label}.slug must match urlPath`);
   }
-  assert(value.robots === "noindex, nofollow", `${label}.robots must stay noindex before cutover`);
+  const { discoverability } = value;
+  assert(
+    typeof discoverability === "string" && Object.hasOwn(robotsByDiscoverability, discoverability),
+    `${label}.discoverability must be indexed, unlisted, or review-only`,
+  );
+  assert(
+    value.robots === robotsByDiscoverability[discoverability as PublicDiscoverability],
+    `${label}.robots must match its discoverability`,
+  );
   assert(Array.isArray(value.sections) && value.sections.length > 0, `${label}.sections must not be empty`);
   value.sections.forEach((section, index) => validateSection(section, `${label}.sections[${index}]`));
   assertStringArray(value.signalTerms, `${label}.signalTerms`);
@@ -188,7 +207,7 @@ function validateRoute(value: unknown, label: string): asserts value is PublicRo
       new Set(productNames).size === productNames.length,
       `${label}.products names must be unique`,
     );
-    const productHrefs = value.products.map((product) => product.href);
+    const productHrefs = value.products.flatMap((product) => (product.href === undefined ? [] : [product.href]));
     assert(
       new Set(productHrefs).size === productHrefs.length,
       `${label}.products href values must be unique`,
@@ -325,7 +344,7 @@ function validateProduct(value: unknown, label: string): asserts value is Public
   for (const field of ["boundary", "job", "name", "proof", "role", "status"] as const) {
     assertString(value[field], `${label}.${field}`);
   }
-  assertPublicHref(value.href, `${label}.href`);
+  if (value.href !== undefined) assertPublicHref(value.href, `${label}.href`);
   validateAction(value.evidence, `${label}.evidence`);
 }
 
