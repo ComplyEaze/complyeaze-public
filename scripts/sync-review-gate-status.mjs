@@ -68,7 +68,7 @@ function evaluateReviewGate(target) {
   return {
     state: "success",
     description: result.allowedMissingHeadReview
-      ? "No active review blockers; Codex review missing."
+      ? "No active review blockers; no current-head GitHub review found."
       : "No active review blockers found.",
   };
 }

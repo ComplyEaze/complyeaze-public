@@ -75,11 +75,17 @@ content included in this PR. If none, write `None`.
 
 ## Review-Rectify
 
-- [ ] Local Codex review completed before every commit in this PR.
-- [ ] Current-head GitHub Codex review completed after the latest push.
+- [ ] A fresh Sonnet reviewer and Opus critic (new instances, no working notes)
+      reviewed the complete diff before every commit in this PR.
+- [ ] Both reviewed the current head after the latest push; each model, round,
+      verdict (CLEAN or NOT CLEAN), and finding is in the table below.
 - [ ] Latest review has no open Critical or High findings.
 - [ ] Medium findings are fixed or listed as follow-ups.
 - [ ] Rendered desktop and mobile evidence uses synthetic data.
+
+| Reviewer (model) | Round | Verdict (CLEAN or NOT CLEAN) |
+| --- | --- | --- |
+| | | |
 
 | Finding | Severity | Disposition | Evidence |
 | --- | --- | --- | --- |
