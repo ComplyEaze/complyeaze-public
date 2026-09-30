@@ -1,6 +1,7 @@
 ---
 import { patternClassName } from "@sanchika/patterns";
 import type { PublicProduct, PublicResourceRoute } from "@complyeaze-public/content";
+import { withEmailsReadable } from "../lib/email-off.ts";
 
 interface Props {
   products: PublicProduct[];
@@ -26,7 +27,7 @@ const isContact = route.urlPath === "/contact/";
 
   <section class:list={["p4-boundary-ledger", patternClassName("ProductRouteMap", { variant: "family", state: "default" })]} aria-label={isContact ? "Contact channels" : "Public product boundaries"}>
     {route.sections.map((section) => (
-      <article><div><h2>{section.title}</h2>{section.meta && <strong>{section.meta}</strong>}</div><p>{section.body}</p></article>
+      <article><div><h2>{section.title}</h2>{section.meta && <strong>{section.meta}</strong>}</div><p set:html={withEmailsReadable(section.body)} /></article>
     ))}
   </section>
 

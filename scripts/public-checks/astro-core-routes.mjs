@@ -126,6 +126,17 @@ export function assertAstroCoreRouteBuild(root) {
   const evidence = createReleaseEvidenceFromBuild(root, publicRouteRegistry);
   if (evidence.pageCount !== 25) throw new Error(`expected 25 Astro outputs, found ${evidence.pageCount}`);
   const complyeazeDist = path.join(root, "apps/complyeaze/dist");
+  // Cloudflare rewrites addresses into script-decoded links unless they sit between email_off markers.
+  for (const route of publicRouteRegistry.filter((entry) => entry.app === "complyeaze")) {
+    const page = readFileSync(path.join(complyeazeDist, route.outputPath), "utf8");
+    const html = page.slice(Math.max(0, page.indexOf("<body")));
+    for (const match of html.matchAll(/[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+/g)) {
+      const around = html.slice(Math.max(0, match.index - 16), match.index + match[0].length + 17);
+      if (!around.startsWith("<!--email_off-->") || !around.endsWith("<!--/email_off-->")) {
+        throw new Error(`${route.urlPath}: email address is not wrapped in email_off markers`);
+      }
+    }
+  }
   const robots = readFileSync(path.join(complyeazeDist, "robots.txt"), "utf8");
   const sitemap = readFileSync(path.join(complyeazeDist, "sitemap.xml"), "utf8");
   if (/^\s*Disallow:\s*\/\s*$/m.test(robots) || !robots.includes("Allow: /") || !robots.includes("https://complyeaze.com/sitemap.xml")) {
