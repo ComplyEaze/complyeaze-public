@@ -116,12 +116,12 @@
           "role": "TallyPrime connector for AI assistants",
           "job": "Lets an assistant such as Claude Desktop read TallyPrime on your computer and prepare vouchers that you approve before anything posts.",
           "proof": "Open source preview builds on GitHub, with a local log of every action it takes.",
-          "boundary": "Reaches Tally on the same computer only. What the assistant reads goes to your AI provider.",
-          "status": "Preview; posting is off by default",
+          "boundary": "Reaches Tally on the same computer only. What the assistant reads goes to your AI provider, amounts included. Bridge has no tool to undo a posted voucher.",
+          "status": "Unsigned preview; posting is off by default",
           "href": "https://bridge.complyeaze.com/",
           "evidence": {
-            "label": "Read the Bridge source",
-            "href": "https://github.com/lamemustafa/bridge/releases"
+            "label": "Read Bridge privacy notes and source",
+            "href": "https://github.com/lamemustafa/bridge#privacy-and-safe-diagnostics"
           }
         }
       ]
@@ -507,7 +507,7 @@
         },
         {
           "title": "Visiting this website",
-          "body": "This website is static pages served through GitHub Pages behind Cloudflare, which may process request metadata and security signals as part of serving and protecting it. The pages have no accounts or forms and include no analytics code of their own. Axal, the signed-in workspace, is governed by its own notice, not this page."
+          "body": "This website is static pages served through GitHub Pages behind Cloudflare, which may process request metadata and security signals as part of serving and protecting it. The pages have no accounts or forms and include no analytics code of their own. Axal, the signed-in workspace, is governed by its own notice, not this page. Pack, Tools and Bridge are separate products whose privacy documentation is in their own public source."
         },
         {
           "title": "Private app separation",
