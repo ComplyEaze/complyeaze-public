@@ -11,32 +11,33 @@
       "eyebrow": "For Indian CA and CS firms",
       "heading": "Compliance tools that show their work.",
       "kind": "home",
-      "summary": "Free, open-source tools for Indian CA firms. They run in your browser, and your GST password never reaches us.",
-      "robots": "noindex, nofollow",
+      "summary": "Free, open-source tools for Indian CA firms. Pack does not capture your GST password, and Tools work on pasted rows inside your browser.",
+      "discoverability": "indexed",
+      "robots": "index, follow",
       "signalTerms": ["ComplyEaze", "Pack", "Tools", "Axal"],
       "primaryAction": {
         "label": "Install Pack",
         "href": "https://chromewebstore.google.com/detail/nfnbhekccajjfgkppolomflaeledoccb"
       },
       "secondaryAction": {
-        "label": "See the free tools",
+        "label": "See Tools",
         "href": "/products/tools/"
       },
       "sections": [
         {
           "title": "Your GST password",
-          "meta": "never reaches us.",
-          "body": "Pack works inside the GST portal tab you signed in to yourself. It does not read or keep passwords, OTPs, CAPTCHAs or cookies."
+          "meta": "is not captured.",
+          "body": "Pack works inside the GST portal tab you signed in to yourself. Its public source lists no capture of credentials, OTPs, CAPTCHAs, cookies or session tokens."
         },
         {
           "title": "Your client files",
-          "meta": "stay on your computer.",
-          "body": "Filed returns save to your own Downloads folder. Tools work on pasted rows inside the browser tab. Nothing is uploaded."
+          "meta": "are handled on your computer.",
+          "body": "Pack saves filed returns to your own Downloads folder and uploads no GST documents. Tools work on pasted rows inside the browser tab and need no file upload."
         },
         {
           "title": "Our code",
           "meta": "is open to read.",
-          "body": "Pack, Tools and this website are open source under Apache 2.0, so your firm can check what runs before trusting it."
+          "body": "Pack, Tools and this website are open source under Apache 2.0, so your firm can read the source before trusting it."
         },
         {
           "title": "The final call",
@@ -49,12 +50,13 @@
       "slug": "products",
       "urlPath": "/products/",
       "title": "Products | ComplyEaze",
-      "description": "Compare Axal, Pack, and Tools by job, public evidence, custody boundary, and current public posture.",
+      "description": "Compare ComplyEaze products by job, custody boundary, public evidence and current status: Pack, Tools, Axal and Bridge.",
       "eyebrow": "Product family",
       "heading": "Compare the job, custody, proof, and next action.",
       "kind": "products",
       "summary": "The product family shares public evidence standards, not one workflow. Use this register to identify the owner of the work and verify its current boundary before continuing.",
-      "robots": "noindex, nofollow",
+      "discoverability": "indexed",
+      "robots": "index, follow",
       "signalTerms": ["ComplyEaze", "products", "custody", "evidence"],
       "sections": [
         {
@@ -74,9 +76,9 @@
         {
           "name": "Pack",
           "role": "Chrome extension for filed GST returns",
-          "job": "Saves filed GSTR-3B and GSTR-1 PDFs, the GSTR-1 e-invoice Excel and the GSTR-2B summary PDF from the GST portal to your computer.",
+          "job": "Saves filed GSTR-3B and GSTR-1 PDFs, the GSTR-1 e-invoice Excel where the portal provides it, and the GSTR-2B summary PDF from the GST portal to your computer.",
           "proof": "Open source under Apache 2.0, with release notes, privacy policy and security policy on GitHub.",
-          "boundary": "Runs in your browser. No ComplyEaze account, no uploads and no telemetry.",
+          "boundary": "Runs in your browser. No ComplyEaze account, no GST document upload and no extension analytics or telemetry.",
           "status": "Public beta",
           "href": "/products/pack/",
           "evidence": {
@@ -89,8 +91,8 @@
           "role": "Free browser tools for review work",
           "job": "Turn pasted rows into first drafts: GSTR-2B reconciliation triage, vendor follow-ups, AIS and 26AS mismatches, MSME payables and notice evidence memos.",
           "proof": "Open source, with the full tool list and release notes on GitHub.",
-          "boundary": "Works inside the browser tab. No account, no upload and nothing saved on our side.",
-          "status": "Free to use",
+          "boundary": "Works inside the browser tab. No account or file upload is required, and pasted rows are not intentionally sent to ComplyEaze.",
+          "status": "Hosted site offline; source on GitHub",
           "href": "/products/tools/",
           "evidence": {
             "label": "Read the Tools source",
@@ -104,7 +106,6 @@
           "proof": "Public product pages describe the workspace; the app and its data stay private to your firm.",
           "boundary": "Signed-in workspace with roles and permissions for your team.",
           "status": "Temporarily unavailable",
-          "href": "https://axal.complyeaze.com/",
           "evidence": {
             "label": "Read the Axal page source",
             "href": "https://github.com/lamemustafa/complyeaze-public/blob/master/packages/public-content/src/axal.routes.json"
@@ -115,9 +116,9 @@
           "role": "TallyPrime connector for AI assistants",
           "job": "Lets an assistant such as Claude Desktop read TallyPrime on your computer and prepare vouchers that you approve before anything posts.",
           "proof": "Open source preview builds on GitHub, with a local log of every action it takes.",
-          "boundary": "Connects only to Tally on the same computer.",
-          "status": "Preview",
-          "href": "https://github.com/lamemustafa/bridge",
+          "boundary": "Reaches Tally on the same computer only. What the assistant reads goes to your AI provider.",
+          "status": "Preview; posting is off by default",
+          "href": "https://bridge.complyeaze.com/",
           "evidence": {
             "label": "Read the Bridge source",
             "href": "https://github.com/lamemustafa/bridge/releases"
@@ -129,17 +130,18 @@
       "slug": "products/pack",
       "urlPath": "/products/pack/",
       "title": "Pack | ComplyEaze",
-      "description": "Understand Pack's local-first GST evidence role, custody boundary, and product-owned public proof before continuing.",
+      "description": "Pack is an open-source Chrome extension that saves filed GSTR-3B and GSTR-1 returns and the GSTR-2B statement from the GST portal to your computer.",
       "eyebrow": "Pack product gateway",
       "heading": "Collect the portal evidence locally. Verify Pack before use.",
       "kind": "gateway",
       "product": "Pack",
       "summary": "Pack is the product-owned browser-extension route for authorised users performing a narrow GST Portal evidence task. Its source and release surfaces—not this gateway—define current capability and posture.",
-      "robots": "noindex, nofollow",
+      "discoverability": "indexed",
+      "robots": "index, follow",
       "signalTerms": ["Pack", "GST evidence", "local-first", "source"],
       "primaryAction": {
-        "label": "Open Pack public site",
-        "href": "https://pack.complyeaze.com/"
+        "label": "Open Pack on the Chrome Web Store",
+        "href": "https://chromewebstore.google.com/detail/nfnbhekccajjfgkppolomflaeledoccb"
       },
       "secondaryAction": {
         "label": "Compare the product family",
@@ -172,8 +174,8 @@
         },
         {
           "label": "Review Pack privacy",
-          "description": "Read the product-owned privacy boundary for the public Pack surface.",
-          "href": "https://pack.complyeaze.com/privacy"
+          "description": "Read the privacy questions and answers kept in Pack's public source.",
+          "href": "https://github.com/lamemustafa/pack/blob/master/docs/PRIVACY_QA.md"
         },
         {
           "label": "Review Pack security",
@@ -186,17 +188,18 @@
       "slug": "products/tools",
       "urlPath": "/products/tools/",
       "title": "Tools | ComplyEaze",
-      "description": "Understand the browser-local Tools job, custody boundary, and product-owned public proof before choosing a utility.",
+      "description": "Open-source browser tools that turn pasted rows into review drafts: GSTR-2B reconciliation, vendor follow-ups, AIS and 26AS mismatches, MSME payables and notice evidence memos.",
       "eyebrow": "Tools product gateway",
       "heading": "Prepare the first-pass draft locally. Keep judgement human.",
       "kind": "gateway",
       "product": "Tools",
       "summary": "Tools is the browser-local route for focused working drafts from pasted rows or plain text. Each utility owns its runtime and evidence; every output remains material for human and professional review.",
-      "robots": "noindex, nofollow",
+      "discoverability": "indexed",
+      "robots": "index, follow",
       "signalTerms": ["Tools", "browser-local", "draft", "evidence"],
       "primaryAction": {
-        "label": "Open Tools public site",
-        "href": "https://tools.complyeaze.com/"
+        "label": "Open Tools on GitHub",
+        "href": "https://github.com/lamemustafa/complyeaze-tools"
       },
       "secondaryAction": {
         "label": "Compare the product family",
@@ -205,7 +208,7 @@
       "sections": [
         {
           "title": "Use Tools for a first-pass draft",
-          "body": "Tools provides focused browser-local utilities for reconciliation triage, payables review, follow-up drafts, evidence memos, and review copies. Each output remains a draft for human and professional review."
+          "body": "The hosted Tools site was not reachable on 2026-09-30, so use the public source for now. Tools provides focused browser-local utilities for reconciliation triage, payables review, follow-up drafts, evidence memos, and review copies. Each output remains a draft for human and professional review."
         },
         {
           "title": "Where your inputs and drafts stay",
@@ -224,8 +227,8 @@
         },
         {
           "label": "Review Tools privacy",
-          "description": "Read the product-owned privacy boundary and hosting qualification.",
-          "href": "https://tools.complyeaze.com/privacy/"
+          "description": "Read the product-owned privacy boundary and hosting qualification in Tools' public source.",
+          "href": "https://github.com/lamemustafa/complyeaze-tools/blob/master/docs/privacy-local-first.md"
         },
         {
           "label": "Review Tools release gates",
@@ -248,7 +251,8 @@
       "heading": "Make product ownership visible before trust is requested.",
       "kind": "resource",
       "summary": "ComplyEaze is the public evidence register for a product family whose workflows, custody models, and operating boundaries remain deliberately separate.",
-      "robots": "noindex, nofollow",
+      "discoverability": "indexed",
+      "robots": "index, follow",
       "signalTerms": ["ComplyEaze", "public", "proof"],
       "primaryAction": {
         "label": "See the product family",
@@ -287,7 +291,8 @@
       "heading": "Route the question without exposing the work.",
       "kind": "resource",
       "summary": "Use the public tracker for synthetic website evidence and the security policy for sensitive reporting guidance. Product work and sensitive context do not belong in public copy or issues.",
-      "robots": "noindex, nofollow",
+      "discoverability": "indexed",
+      "robots": "index, follow",
       "signalTerms": ["ComplyEaze", "public", "channel"],
       "primaryAction": {
         "label": "Review public-site issues",
@@ -311,7 +316,7 @@
         {
           "title": "Product or customer inquiry",
           "meta": "Private product channel",
-          "body": "Do not put client, taxpayer, credential, document, phone, or portal details into this public repository. Use the established private ComplyEaze channel instead."
+          "body": "Do not put client, taxpayer, credential, document, phone, or portal details into this public repository. No private inquiry channel is published on this site yet, so use the public issue tracker only for questions that contain none of those details."
         }
       ],
       "proof": [
@@ -329,7 +334,8 @@
       "heading": "Public claims need evidence",
       "kind": "evidence",
       "summary": "This repository is open by design, so trust comes from narrow claims, synthetic examples, explicit product boundaries, and public source evidence rather than implied authority.",
-      "robots": "noindex, nofollow",
+      "discoverability": "indexed",
+      "robots": "index, follow",
       "signalTerms": ["ComplyEaze", "trust", "evidence"],
       "sections": [
         {
@@ -382,7 +388,8 @@
       "heading": "Follow the evidence path before changing a route",
       "kind": "evidence",
       "summary": "These source documents explain how public pages move, what evidence a release needs, and which conditions must remain blocked until production cutover is proven.",
-      "robots": "noindex, nofollow",
+      "discoverability": "unlisted",
+      "robots": "noindex, follow",
       "signalTerms": ["ComplyEaze", "runbooks", "migration"],
       "sections": [
         {
@@ -440,7 +447,8 @@
       "heading": "No cleanup before route evidence",
       "kind": "migration",
       "summary": "Every public route family needs a destination, hosted evidence, redirect decision, cleanup rule, and rollback path before a source route is removed or redirected.",
-      "robots": "noindex, nofollow",
+      "discoverability": "unlisted",
+      "robots": "noindex, follow",
       "signalTerms": ["ComplyEaze", "migration", "ledger"],
       "sections": [
         {
@@ -475,12 +483,13 @@
       "slug": "privacy",
       "urlPath": "/privacy/",
       "title": "Privacy Boundary | ComplyEaze",
-      "description": "Privacy boundary for the ComplyEaze public website, trust, and migration evidence pages.",
+      "description": "What the ComplyEaze public website and repository do and do not handle: no tenant data, no portal credentials, and normal request metadata from serving the pages.",
       "eyebrow": "Privacy boundary",
       "heading": "This repo does not process tenant data",
       "kind": "policy",
       "summary": "The public site can be inspected, forked, and reviewed without crossing into authenticated app data, portal sessions, compliance documents, or private infrastructure.",
-      "robots": "noindex, nofollow",
+      "discoverability": "indexed",
+      "robots": "index, follow",
       "signalTerms": ["ComplyEaze", "privacy", "public"],
       "policySummary": {
         "scope": "Public static repository",
@@ -495,6 +504,10 @@
         {
           "title": "Data used in this repo",
           "body": "Examples, screenshots, fixtures, and issue reports must use synthetic data. Public evidence must not include PAN, GSTIN, Aadhaar, phone numbers, taxpayer names, portal HTML, notices, orders, credentials, OTPs, CAPTCHA images, cookies, tokens, downloaded files, local browser profiles, or production screenshots."
+        },
+        {
+          "title": "Visiting this website",
+          "body": "This website is static pages served through GitHub Pages behind Cloudflare, which may process request metadata and security signals as part of serving and protecting it. The pages have no accounts or forms and include no analytics code of their own. Axal, the signed-in workspace, is governed by its own notice, not this page."
         },
         {
           "title": "Private app separation",
@@ -515,7 +528,8 @@
       "heading": "Open code is not an open trademark license",
       "kind": "policy",
       "summary": "The website source is reviewable and Apache-licensed; the ComplyEaze-family marks, product claims, and professional-use boundaries remain controlled.",
-      "robots": "noindex, nofollow",
+      "discoverability": "indexed",
+      "robots": "index, follow",
       "signalTerms": ["ComplyEaze", "terms", "trademark"],
       "policySummary": {
         "scope": "Public static repository",
@@ -550,7 +564,8 @@
       "heading": "Static-site readiness, not app uptime",
       "kind": "policy",
       "summary": "Status here means public repo readiness, migration posture, and release-gate evidence. Authenticated app health belongs to a separate operational channel.",
-      "robots": "noindex, nofollow",
+      "discoverability": "unlisted",
+      "robots": "noindex, follow",
       "signalTerms": ["ComplyEaze", "status", "readiness"],
       "policySummary": {
         "scope": "Public build and migration posture",
@@ -564,7 +579,7 @@
         },
         {
           "title": "Build posture",
-          "body": "ComplyEaze, Axal, and Pack build independently as static noindex Astro apps from typed manifests. Release gates require lint, typecheck, tests, build, aggregate release evidence, visual screenshots, public-content checks, link checks, metadata checks, git diff --check, and review-thread clearance. Rollback is a Git revert backed by retained CI artifacts."
+          "body": "ComplyEaze, Axal, and Pack build independently as static Astro apps from typed manifests. ComplyEaze marks each route indexed, unlisted, or review-only, and the robots directive and sitemap follow that marking; Axal and Pack stay noindex previews. Release gates require lint, typecheck, tests, build, aggregate release evidence, visual screenshots, public-content checks, link checks, metadata checks, git diff --check, and review-thread clearance. Rollback is a Git revert backed by retained CI artifacts; for search indexing, rollback means setting routes to unlisted or review-only while robots.txt keeps allowing crawling."
         },
         {
           "title": "Governance posture",
@@ -572,11 +587,11 @@
         },
         {
           "title": "Migration posture",
-          "body": "The typed manifests now own 16 ComplyEaze routes, seven Axal routes, and two Pack routes, including three noindex craft-review records. The old string renderer and its duplicate adapters are removed. Hosting and path routing remain pending, and route-level cleanup stays blocked until hosted routing, canonical URLs, redirect behavior, rollback evidence, and a separate private-app cleanup PR are reviewed."
+          "body": "The typed manifests now own 16 ComplyEaze routes, seven Axal routes, and two Pack routes, including three noindex craft-review records. The old string renderer and its duplicate adapters are removed. complyeaze.com is served from this repository; Axal and Pack path routing remains pending, and route-level cleanup of private-app routes stays blocked until hosted routing, canonical URLs, redirect behavior, rollback evidence, and a separate private-app cleanup PR are reviewed."
         },
         {
           "title": "Hosting posture",
-          "body": "Pages deploy is gated and readiness-only behind ENABLE_GITHUB_PAGES_DEPLOY. A successful preview or artifact upload does not authorize cleanup because it is not production-host or parent-route cleanup evidence."
+          "body": "complyeaze.com is deployed from master through GitHub Pages while ENABLE_GITHUB_PAGES_DEPLOY is true. On 2026-09-30 the owner approved search and AI-assistant indexing of the pages marked indexed. A Pages deploy is not evidence for removing or redirecting any private-app route, so cleanup stays blocked."
         },
         {
           "title": "Incident language",
@@ -593,7 +608,8 @@
       "heading": "Migration history stays auditable",
       "kind": "policy",
       "summary": "Each public slice records what moved, what stayed blocked, and which evidence must exist before parent routes are cleaned up.",
-      "robots": "noindex, nofollow",
+      "discoverability": "unlisted",
+      "robots": "noindex, follow",
       "signalTerms": ["ComplyEaze", "changelog", "migration"],
       "policySummary": {
         "scope": "Public migration history",
@@ -601,6 +617,10 @@
         "excluded": "Production cutover claims"
       },
       "sections": [
+        {
+          "title": "2026-09-30 - Search indexing approved",
+          "body": "The owner approved search-engine and AI-assistant indexing of the nine customer pages. Six process and evidence pages stay unlisted (noindex, follow, out of the sitemap) and the craft review stays review-only. robots.txt now allows crawling, the sitemap lists indexed pages only, Bridge links to its own site, and the Axal card no longer links to a host that is not reachable. Redirects and private-app cleanup are unchanged."
+        },
         {
           "title": "2026-07-16 - Sanchika v0.1 public adoption",
           "body": "Adopted the exact reviewed Sanchika v0.1.0 GitHub release artifacts across the ComplyEaze, Axal, and Pack public Astro shells, added typed adoption and rollback evidence, expanded release evidence to 22 routes and 66 visual cells, and kept pattern composition, hosting, indexing, private-app changes, and Tools outside the tranche."
@@ -688,7 +708,8 @@
       "heading": "No release without reviewable proof",
       "kind": "policy",
       "summary": "A public-site change needs source checks, rendered screenshots, metadata, links, public-claim review, and a rollback story before private-route cleanup follows.",
-      "robots": "noindex, nofollow",
+      "discoverability": "unlisted",
+      "robots": "noindex, follow",
       "signalTerms": ["ComplyEaze", "release", "evidence"],
       "policySummary": {
         "scope": "Public source and rendered output",
@@ -738,7 +759,7 @@
         },
         {
           "title": "Pages deploy guard",
-          "body": "The GitHub Pages workflow is readiness-only unless it runs on master with ENABLE_GITHUB_PAGES_DEPLOY set to true. It runs the full verify gate before uploading only apps/complyeaze/dist, and it is not parent-route cleanup evidence without hosted route, canonical, redirect, and rollback review."
+          "body": "The GitHub Pages workflow deploys only when it runs on master with ENABLE_GITHUB_PAGES_DEPLOY set to true, which is how complyeaze.com is served. It runs the full verify gate before uploading only apps/complyeaze/dist, and it is not parent-route cleanup evidence without hosted route, canonical, redirect, and rollback review."
         },
         {
           "title": "Review gate",
@@ -755,7 +776,8 @@
       "heading": "Sanchika adoption is tied to reviewed release artifacts",
       "kind": "adoption",
       "summary": "ComplyEaze, Axal, and Pack consume the same reviewed Sanchika v0.1.1 GitHub artifact set for a bounded public-shell baseline.",
-      "robots": "noindex, nofollow",
+      "discoverability": "unlisted",
+      "robots": "noindex, follow",
       "signalTerms": ["Sanchika", "v0.1.1", "artifact adoption"],
       "sections": [
         {
@@ -781,6 +803,7 @@
       "heading": "Evidence should make the boundary visible",
       "kind": "public-craft-review",
       "summary": "A production-quality review excerpt for evaluating product-family ownership, evidence posture, and human review before public rebuild work begins.",
+      "discoverability": "review-only",
       "robots": "noindex, nofollow",
       "signalTerms": ["ComplyEaze", "synthetic", "craft review", "evidence register"],
       "sections": [
@@ -789,7 +812,6 @@
           "body": "This synthetic route demonstrates composition and visual language only. It does not expose private operations or grant C3 approval."
         }
       ],
-      "discoverability": "review-only",
       "reviewEvidence": {
         "accessibility": ["axe", "keyboard", "reduced-motion", "forced-colors"],
         "budgets": {

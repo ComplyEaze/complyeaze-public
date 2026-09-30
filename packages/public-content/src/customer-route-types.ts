@@ -3,7 +3,8 @@ import type { PublicAction, PublicRouteBase } from "./schema.ts";
 export interface PublicProduct {
   boundary: string;
   evidence: PublicAction;
-  href: string;
+  /** Omitted while the product has no reachable destination; the card then shows status only. */
+  href?: string;
   job: string;
   name: string;
   proof: string;

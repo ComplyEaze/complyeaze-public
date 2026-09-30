@@ -8,7 +8,7 @@ export const prerender = true;
 
 export const GET: APIRoute = () => {
   const urls = manifest.routes
-    .filter((route) => route.kind !== "public-craft-review")
+    .filter((route) => route.discoverability === "indexed")
     .map((route) => `  <url><loc>${new URL(route.urlPath, manifest.origin).href}</loc></url>`)
     .join("\n");
   return new Response(

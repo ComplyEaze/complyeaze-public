@@ -44,6 +44,7 @@ async function main() {
         findings
       );
       assertIncludes(html.text, `rel="canonical" href="${route.canonical}"`, "canonical", findings);
+      assertIncludes(html.text, `name="robots" content="${route.robots}"`, "robots directive", findings);
       assertIncludes(html.text, 'property="og:title"', "Open Graph title", findings);
       assertIncludes(html.text, "<main", "main landmark", findings);
     }
@@ -79,6 +80,7 @@ async function checkRobots() {
   const findings = robots.error ? [robots.error] : [];
   if (!robots.error) {
     assertIncludes(robots.text, "User-agent: *", "robots user-agent", findings);
+    if (/^\s*Disallow:\s*\/\s*$/m.test(robots.text)) findings.push("robots.txt still disallows crawling");
     assertIncludes(robots.text, `${manifestOrigin}/sitemap.xml`, "sitemap location", findings);
   }
   checks.push({
@@ -95,11 +97,11 @@ async function checkSitemap() {
   const sitemap = await fetchText("/sitemap.xml");
   const findings = sitemap.error ? [sitemap.error] : [];
   if (!sitemap.error) {
-    for (const route of routes.filter(({ discoverability }) => discoverability !== "review-only")) {
+    for (const route of routes.filter(({ discoverability }) => discoverability === "indexed")) {
       assertIncludes(sitemap.text, `<loc>${route.canonical}</loc>`, `${route.urlPath} sitemap loc`, findings);
     }
-    for (const route of routes.filter(({ discoverability }) => discoverability === "review-only")) {
-      if (sitemap.text.includes(`<loc>${route.canonical}</loc>`)) findings.push(`${route.urlPath} review-only route appears in sitemap`);
+    for (const route of routes.filter(({ discoverability }) => discoverability !== "indexed")) {
+      if (sitemap.text.includes(`<loc>${route.canonical}</loc>`)) findings.push(`${route.urlPath} ${route.discoverability} route appears in sitemap`);
     }
   }
   checks.push({
