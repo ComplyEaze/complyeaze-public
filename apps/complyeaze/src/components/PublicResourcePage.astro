@@ -1,5 +1,6 @@
 ---
 import type { PublicResourceRoute } from "@complyeaze-public/content";
+import { withEmailsReadable } from "../lib/email-off.ts";
 
 interface Props {
   route: PublicResourceRoute;
@@ -25,7 +26,7 @@ const { route } = Astro.props;
         <h2>{section.title}</h2>
         {section.meta && <span class="meta">{section.meta}</span>}
       </div>
-      <p>{section.body}</p>
+      <p set:html={withEmailsReadable(section.body)} />
     </article>
   ))}
 </section>
