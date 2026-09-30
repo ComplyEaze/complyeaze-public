@@ -51,7 +51,7 @@ pattern used by Sanchika.
 - Keep `Pages deploy` non-required until GitHub Pages is intentionally enabled
   and a hosted route/canonical/redirect/rollback review is complete.
 - Keep pull-request review-gate sync at zero wait so it reports blocker-thread
-  state quickly. Do not describe it as current-head Codex review enforcement
+  state quickly. Do not describe it as current-head reviewer enforcement
   unless a guaranteed reviewer integration is installed and required.
 - Do not enable Projects or Wiki unless the public contribution model changes.
 - Do not make `master` directly pushable after the initial bootstrap commit.
