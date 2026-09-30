@@ -50,10 +50,13 @@ For non-trivial changes:
 4. Fix all Critical and High findings.
 5. Fix Medium findings when low-cost, otherwise document follow-up scope.
 6. Re-run focused checks, then broaden to the full public gate.
-7. Before every commit, run a local Codex review of the complete intended diff
-   and rectify every valid finding.
-8. After every push, obtain a current-head GitHub Codex review before merge;
-   reply to and resolve every addressed thread.
+7. Before every commit, have fresh Claude reviewers (a Sonnet reviewer and an
+   Opus critic, each a new instance started without your working notes)
+   review the complete intended diff, and rectify every valid finding.
+8. After every push, run a current-head review with both reviewers as new
+   instances. Record each reviewer's model, round, verdict (CLEAN or NOT CLEAN),
+   and findings in the PR's Review-Rectify table, and reply to and resolve every
+   addressed thread. A GitHub Codex review is not required.
 9. Repeat until the latest review is clean.
 
 See `docs/REVIEW_RECTIFY.md`.

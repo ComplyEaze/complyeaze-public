@@ -67,7 +67,8 @@ export function assertAstroWorkspace(root) {
   ]) {
     for (const term of [
       "Before every commit",
-      "current-head GitHub Codex review",
+      "current-head review",
+      "Opus critic",
       "one repository and one open implementation PR",
     ]) {
       if (!text.includes(term)) {
