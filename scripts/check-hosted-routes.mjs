@@ -47,6 +47,13 @@ async function main() {
       assertIncludes(html.text, `name="robots" content="${route.robots}"`, "robots directive", findings);
       assertIncludes(html.text, 'property="og:title"', "Open Graph title", findings);
       assertIncludes(html.text, "<main", "main landmark", findings);
+      for (const marker of ["__cf_email__", "data-cfemail", "/cdn-cgi/l/email-protection"]) {
+        if (html.text.includes(marker)) findings.push(`email address is obfuscated by the CDN (${marker})`);
+      }
+      if (route.urlPath === "/contact/") {
+        assertIncludes(html.text, "contact@complyeaze.com", "plain contact address", findings);
+        assertIncludes(html.text, "security@complyeaze.com", "plain security address", findings);
+      }
     }
 
     checks.push({
