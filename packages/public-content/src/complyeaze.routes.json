@@ -311,7 +311,7 @@
         {
           "title": "Sensitive report",
           "meta": "Security policy",
-          "body": "Read the security policy for suspected secrets, sensitive-data exposure, misleading collection behavior, or security issues. It directs reporters to private vulnerability reporting when available and otherwise to the established private maintainer channel."
+          "body": "Read the security policy for suspected secrets, sensitive-data exposure, misleading collection behavior, or security issues. It directs reporters to private vulnerability reporting when available and otherwise to security@complyeaze.com."
         },
         {
           "title": "Product or customer inquiry",

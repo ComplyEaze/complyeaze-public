@@ -9,8 +9,9 @@ screenshots.
 Do not open a public issue for suspected vulnerabilities or sensitive-data
 exposure.
 
-Use GitHub private vulnerability reporting when available, or contact the
-maintainers through the established private maintainer channel.
+Use GitHub private vulnerability reporting when available, or email
+security@complyeaze.com. Use contact@complyeaze.com for product or customer
+inquiries, not for vulnerability reports.
 
 Include:
 
@@ -18,7 +19,8 @@ Include:
 - Reproduction steps using synthetic data.
 - Impact, including whether users could be misled or sensitive data could be
   exposed.
-- Redacted screenshots or logs only.
+- Redacted screenshots or logs only. Do not attach real PAN, GSTIN, credentials
+  or the exposed data itself; describe where it is instead.
 
 ## Public-Site Security Requirements
 

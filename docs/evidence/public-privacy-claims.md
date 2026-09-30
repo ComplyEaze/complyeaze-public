@@ -31,6 +31,7 @@ page wording must change.
 
 ## Other notes
 
+- security@complyeaze.com is the private security channel, named by the owner on 2026-09-30 (SECURITY.md and the /contact/ "Sensitive report" card).
 - The word "free" was removed from the site on 2026-09-30 at the owner's direction, because none of the Pack, Tools or Bridge READMEs state a price.
 - /contact/ and /privacy/ name contact@complyeaze.com, the address the owner gave on 2026-09-30. The "leave those details out of a first email" line is a safety default added by the assistant for the owner to confirm.
 - "Install Pack" links to the Chrome Web Store listing, which loads and is titled
