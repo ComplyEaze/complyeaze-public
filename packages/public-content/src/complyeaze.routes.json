@@ -7,11 +7,11 @@
       "slug": "index",
       "urlPath": "/",
       "title": "ComplyEaze | Compliance tools that show their work",
-      "description": "Free, open-source GST tools for Indian CA firms. Pack saves filed returns to your computer, and Tools drafts review work inside your browser.",
+      "description": "Open-source GST tools for Indian CA firms. Pack saves filed returns to your computer, and Tools drafts review work inside your browser.",
       "eyebrow": "For Indian CA and CS firms",
       "heading": "Compliance tools that show their work.",
       "kind": "home",
-      "summary": "Free, open-source tools for Indian CA firms. Pack does not capture your GST password, and Tools work on pasted rows inside your browser.",
+      "summary": "Open-source tools for Indian CA firms. Pack does not capture your GST password, and Tools work on pasted rows inside your browser.",
       "discoverability": "indexed",
       "robots": "index, follow",
       "signalTerms": ["ComplyEaze", "Pack", "Tools", "Axal"],
@@ -88,7 +88,7 @@
         },
         {
           "name": "Tools",
-          "role": "Free browser tools for review work",
+          "role": "Browser tools for review work",
           "job": "Turn pasted rows into first drafts: GSTR-2B reconciliation triage, vendor follow-ups, AIS and 26AS mismatches, MSME payables and notice evidence memos.",
           "proof": "Open source, with the full tool list and release notes on GitHub.",
           "boundary": "Works inside the browser tab. No account or file upload is required, and pasted rows are not intentionally sent to ComplyEaze.",
@@ -311,12 +311,12 @@
         {
           "title": "Sensitive report",
           "meta": "Security policy",
-          "body": "Read the security policy for suspected secrets, sensitive-data exposure, misleading collection behavior, or security issues. It directs reporters to private vulnerability reporting when available and otherwise to the established private maintainer channel."
+          "body": "Read the security policy for suspected secrets, sensitive-data exposure, misleading collection behavior, or security issues. It directs reporters to private vulnerability reporting when available and otherwise to security@complyeaze.com."
         },
         {
           "title": "Product or customer inquiry",
           "meta": "Private product channel",
-          "body": "Do not put client, taxpayer, credential, document, phone, or portal details into this public repository. No private inquiry channel is published on this site yet, so use the public issue tracker only for questions that contain none of those details."
+          "body": "Do not put client, taxpayer, credential, document, phone, or portal details into this public repository. For product or customer inquiries, email contact@complyeaze.com, and leave those details out of a first email too."
         }
       ],
       "proof": [
@@ -515,7 +515,7 @@
         },
         {
           "title": "Contact and issues",
-          "body": "Use the repository support and security policies for public website, claim, or vulnerability reports. Do not place sensitive taxpayer, client, credential, document, or portal information in public issues or pull requests."
+          "body": "Use the repository support and security policies for public website, claim, or vulnerability reports. Do not place sensitive taxpayer, client, credential, document, or portal information in public issues or pull requests. For product or customer inquiries, email contact@complyeaze.com, and leave those details out of a first email too."
         }
       ]
     },

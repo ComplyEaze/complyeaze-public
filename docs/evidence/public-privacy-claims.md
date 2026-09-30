@@ -29,11 +29,11 @@ page wording must change.
 - The Bridge card no longer says it "connects only to Tally on the same
   computer", because the assistant's reads reach its AI provider.
 
-## Not evidenced here (owner attestation needed)
+## Other notes
 
-- "Free" (home lede and the "Free, open-source" descriptions; the Tools "Free to use" status was replaced): none of the Pack, Tools or Bridge
-  READMEs state a price. The wording predates this change and was left as the
-  owner's product statement; it is flagged in the PR for the owner to confirm.
+- security@complyeaze.com is the private security channel, named by the owner on 2026-09-30 (SECURITY.md and the /contact/ "Sensitive report" card).
+- The word "free" was removed from the site on 2026-09-30 at the owner's direction, because none of the Pack, Tools or Bridge READMEs state a price.
+- /contact/ and /privacy/ name contact@complyeaze.com, the address the owner gave on 2026-09-30. The "leave those details out of a first email" line is a safety default added by the assistant for the owner to confirm.
 - "Install Pack" links to the Chrome Web Store listing, which loads and is titled
   "ComplyEaze Pack: GST Return Downloader" (checked 2026-09-30).
 - The hosted Tools site (tools.complyeaze.com) returned HTTP 525 on 2026-09-30; the Tools status and gateway page say so.
