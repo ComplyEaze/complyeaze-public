@@ -34,7 +34,7 @@
     "sanchika:smoke": "node apps/complyeaze/scripts/sanchika-package-smoke.mjs"
   },
   "devDependencies": {
-    "@axe-core/playwright": "4.12.1",
-    "playwright": "1.61.1"
+    "@axe-core/playwright": "4.13.0",
+    "playwright": "1.63.0"
   }
 }
