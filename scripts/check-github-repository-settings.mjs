@@ -4,7 +4,7 @@ import process from "node:process";
 
 const cliArgs = process.argv.slice(2);
 const allowMainTransition = cliArgs.includes("--allow-main-transition");
-const repository = cliArgs.find((argument) => !argument.startsWith("--")) ?? "lamemustafa/complyeaze-public";
+const repository = cliArgs.find((argument) => !argument.startsWith("--")) ?? "ComplyEaze/complyeaze-public";
 const expectedTopics = ["complyeaze", "public-site", "compliance", "open-source", "trust"];
 const expectedRequiredChecks = ["Public site gates", "Review gate"];
 const expectedRuleTypes = ["deletion", "non_fast_forward", "pull_request", "required_status_checks"];

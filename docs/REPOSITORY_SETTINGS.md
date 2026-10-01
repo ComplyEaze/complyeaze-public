@@ -5,7 +5,7 @@ Last verified: 2026-07-16
 
 ## Repository
 
-- GitHub repository: `lamemustafa/complyeaze-public`
+- GitHub repository: `ComplyEaze/complyeaze-public`
 - Visibility: public
 - Default branch: `master`
 - Homepage: `https://complyeaze.com`
@@ -76,7 +76,7 @@ complete review, merge-method, and required-check policy. Remove the flag after
 the live default changes; the ordinary command remains strict for `master`.
 
 The audit uses the GitHub CLI to verify the live
-`lamemustafa/complyeaze-public` repository metadata and `Protect master` ruleset:
+`ComplyEaze/complyeaze-public` repository metadata and `Protect master` ruleset:
 public visibility, default branch, homepage, issue/project/wiki posture, topic
 set, squash merge support, active `refs/heads/master` ruleset enforcement, branch
 deletion and non-fast-forward protection, pull-request requirement, one approving

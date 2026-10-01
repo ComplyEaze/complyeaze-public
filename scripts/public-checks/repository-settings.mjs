@@ -12,7 +12,7 @@ const packageJsonPath = "package.json";
 const githubSettingsScriptPath = "scripts/check-github-repository-settings.mjs";
 
 const requiredRepositoryTerms = [
-  "GitHub repository: `lamemustafa/complyeaze-public`",
+  "GitHub repository: `ComplyEaze/complyeaze-public`",
   "Visibility: public",
   "Default branch: `master`",
   "Homepage: `https://complyeaze.com`",
@@ -80,7 +80,7 @@ const requiredPackageTerms = [
 ];
 
 const requiredGithubSettingsScriptTerms = [
-  "lamemustafa/complyeaze-public",
+  "ComplyEaze/complyeaze-public",
   "--allow-main-transition",
   "acceptedDefaultBranches",
   "rulesetName",
