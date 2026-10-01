@@ -50,10 +50,10 @@ export function assertP4ComplyEazeSources(root) {
   }
 
   const contact = manifest.routes.find((route) => route.urlPath === "/contact/");
-  if (contact?.primaryAction?.href !== "https://github.com/lamemustafa/complyeaze-public/issues") {
+  if (contact?.primaryAction?.href !== "https://github.com/ComplyEaze/complyeaze-public/issues") {
     findings.push("/contact/: primary action must use the public issue tracker");
   }
-  if (contact?.secondaryAction?.href !== "https://github.com/lamemustafa/complyeaze-public/blob/master/SECURITY.md") {
+  if (contact?.secondaryAction?.href !== "https://github.com/ComplyEaze/complyeaze-public/blob/master/SECURITY.md") {
     findings.push("/contact/: secondary action must use the security policy while private reporting is disabled");
   }
 

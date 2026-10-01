@@ -148,7 +148,7 @@ function runGateFixture(fixturePath, testCase) {
       [
         gateScript,
         "--repo",
-        "lamemustafa/complyeaze-public",
+        "ComplyEaze/complyeaze-public",
         "--pr",
         "1",
         "--fixture",

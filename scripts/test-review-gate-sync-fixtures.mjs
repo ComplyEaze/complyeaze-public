@@ -16,7 +16,7 @@ const root = process.cwd();
 const fixtureDir = mkdtempSync(path.join(tmpdir(), "review-gate-sync-fixtures-"));
 const fakeGhPath = path.join(fixtureDir, "gh");
 const syncScript = path.join(root, "scripts", "sync-review-gate-status.mjs");
-const repository = "lamemustafa/complyeaze-public";
+const repository = "ComplyEaze/complyeaze-public";
 const runUrl = "https://github.test/actions/runs/123";
 let scenarioCount = 0;
 
