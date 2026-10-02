@@ -14,7 +14,7 @@
     "typecheck:scripts": "node scripts/check-public-repo.mjs --typecheck",
     "typecheck:packages": "pnpm --filter './packages/*' typecheck",
     "typecheck:apps": "pnpm --filter './apps/*' typecheck",
-    "test": "node scripts/check-public-repo.mjs --test && node scripts/test-craft-asset-evidence.mjs",
+    "test": "node scripts/check-public-repo.mjs --test && node scripts/test-craft-asset-evidence.mjs && node scripts/test-deploy-workflow.mjs",
     "dev:core": "pnpm --filter @complyeaze-public/core dev",
     "dev:axal": "pnpm --filter @complyeaze-public/axal dev",
     "dev:pack": "pnpm --filter @complyeaze-public/pack dev",
