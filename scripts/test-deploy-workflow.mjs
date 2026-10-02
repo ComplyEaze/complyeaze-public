@@ -81,6 +81,11 @@ const variants = {
   "a self-hosted runner for the deploy job": original.replace(/(\n {2}deploy:[\s\S]*?\n {4}runs-on: )ubuntu-latest/, "$1self-hosted"),
   "a self-hosted runner for the build job": original.replace(/(\n {2}build:[\s\S]*?\n {4}runs-on: )ubuntu-latest/, "$1self-hosted"),
   "a runner label list for the deploy job": original.replace(/(\n {2}deploy:[\s\S]*?\n {4}runs-on: )ubuntu-latest/, "$1[ubuntu-latest, self-hosted]"),
+  "a different 40-hex commit of deploy-pages": replaceOnce("actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128", `actions/deploy-pages@${"a".repeat(40)}`),
+  "a different 40-hex commit of configure-pages": replaceOnce("actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d", `actions/configure-pages@${"b".repeat(40)}`),
+  "a different 40-hex commit of upload-pages-artifact": replaceOnce("actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9", `actions/upload-pages-artifact@${"c".repeat(40)}`),
+  "a no-break-space indented line": replaceOnce("      - name: Configure Pages\n", "\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0- name: Configure Pages\n"),
+  "an ideographic-space indented step key": replaceOnce("        uses: actions/configure-pages@", "\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000uses: actions/configure-pages@"),
   "the old single job": original.replace(/\n {2}deploy:[\s\S]*$/, "\n").replace("permissions:\n  contents: read\n\nconcurrency", "permissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency"),
 };
 for (const [name, workflow] of Object.entries(variants)) {
@@ -94,6 +99,7 @@ for (const [name, text] of Object.entries({
   "a flow mapping": "a: {b: 1}\n",
   "a nested flow sequence": "a: [[1]]\n",
   "a tab": "a:\n\tb: 1\n",
+  "a no-break-space indent": "a:\n\u00a0\u00a0b: 1\n",
   "a duplicate key": "a: 1\na: 2\n",
   "a second document": "a: 1\n---\nb: 2\n",
   "a merge key": "a:\n  <<: *x\n",

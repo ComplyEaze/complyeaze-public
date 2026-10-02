@@ -63,7 +63,13 @@ export function parseWorkflowYaml(source) {
   if (/\t/.test(source)) throw new Error("unsupported YAML (a tab character)");
   const raw = source.replace(/\r\n/g, "\n").split("\n");
   if (raw.some((line) => /^(---|\.\.\.)(\s|$)/.test(line))) throw new Error("unsupported YAML (document markers)");
-  const lines = raw.map((text) => ({ text, indent: text.length - text.trimStart().length }));
+  // Indentation is spaces only. Any other leading whitespace (a no-break space, an ideographic space) is not YAML
+  // indentation, and JavaScript's trim would otherwise count it as indentation and read the line as nested.
+  const lines = raw.map((text, index) => {
+    const indent = text.length - text.replace(/^ +/, "").length;
+    if (/^\s/.test(text.slice(indent))) unsupported(index, "leading whitespace other than spaces");
+    return { text, indent };
+  });
   let position = 0;
 
   const skipBlank = () => {
