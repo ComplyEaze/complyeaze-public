@@ -8,6 +8,14 @@ const repositorySettingsPath = "docs/REPOSITORY_SETTINGS.md";
 
 const guard = "${{ github.ref == 'refs/heads/master' && vars.ENABLE_GITHUB_PAGES_DEPLOY == 'true' }}";
 const pinned = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+@[0-9a-f]{40}$/;
+// The reviewed commits of the Pages actions. The two in the deploy job are the only code that runs with the
+// identity token, and GitHub resolves owner/repo@sha even for a commit that exists only in a fork, so a 40-hex
+// shape is not enough: any change to one of these SHAs must change this list in the same pull request.
+const reviewedPagesActions = {
+  "actions/configure-pages": "45bfe0192ca1faeb007ade9deae92b16b8254a0d",
+  "actions/deploy-pages": "cd2ce8fcbc39b97be8ca5fce6e763baed58fa128",
+  "actions/upload-pages-artifact": "fc324d3547104276b827a68afc52ff2a11cc49c9",
+};
 const sameSet = (actual, expected) => actual.length === expected.length && expected.every((item) => actual.includes(item));
 const sameMap = (actual, expected) => JSON.stringify(Object.entries(actual ?? {}).sort()) === JSON.stringify(Object.entries(expected).sort());
 
@@ -76,6 +84,10 @@ function pagesWorkflowFindings(workflow) {
   }
   must(deploySteps.every((step) => pinned.test(step?.uses ?? "")), "each deploy step must use a repository action pinned to a 40-character SHA");
   must(deploySteps.map((step) => step?.uses?.split("@")[0]).join() === "actions/configure-pages,actions/deploy-pages", "the deploy job must use exactly actions/configure-pages then actions/deploy-pages");
+  for (const step of [...deploySteps, ...(upload ? [upload] : [])]) {
+    const [action, sha] = String(step?.uses).split("@");
+    must(reviewedPagesActions[action] === sha, `${action} must be the reviewed commit ${reviewedPagesActions[action]}, found ${sha}`);
+  }
   must(deploySteps[1]?.id === "deployment", "the deploy-pages step must have the id deployment");
   return findings;
 }
