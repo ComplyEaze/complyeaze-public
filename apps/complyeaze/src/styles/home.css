@@ -158,6 +158,9 @@
   border-radius: 0;
   background: transparent;
   color: var(--ce-carbon);
+  /* The pattern's `overflow: hidden` makes this a scroll container, so the stamps'
+     view() timelines would track this non-scrolling section, not the page. */
+  overflow: clip;
 }
 .ce-home .ce-family :is(h2, h3, p, dt, dd) { color: inherit; }
 .ce-family__grid {
@@ -338,7 +341,7 @@
 }
 
 @keyframes ce-stamp-land {
-  0% { opacity: 0; scale: 1.8; }
+  0% { opacity: 0; scale: 1.1; }
   55% { opacity: 1; scale: 0.94; }
   78% { scale: 1.025; }
   100% { opacity: 1; scale: 1; }
@@ -347,7 +350,14 @@
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
     .ce-product__stamp, .ce-sheet__stamp {
-      animation: ce-stamp-land linear both;
+      /* Longhands on purpose: the minifier folds `animation` + `animation-timeline`
+         into one shorthand, which Chromium rejects, dropping the animation.
+         Backwards-only fill: once landed, the stamp drops its animation layer and
+         prints its ink exactly as the static stamp does. */
+      animation-name: ce-stamp-land;
+      animation-duration: auto;
+      animation-timing-function: linear;
+      animation-fill-mode: backwards;
       animation-timeline: view();
       animation-range: entry 55% cover 40%;
     }
