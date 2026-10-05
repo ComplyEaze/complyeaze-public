@@ -7,6 +7,6 @@ overrides:
   "@sanchika/primitives@0.1.1": "https://github.com/lamemustafa/sanchika/releases/download/v0.1.1/sanchika-primitives-0.1.1.tgz"
 
 catalog:
-  "@astrojs/check": "0.9.9"
-  astro: "7.1.1"
-  typescript: "6.0.3"
+  "@astrojs/check": "0.9.10"
+  astro: "7.3.5"
+  typescript: "7.0.2"
