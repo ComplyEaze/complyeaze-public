@@ -20,7 +20,7 @@ const { route } = Astro.props;
       <h2 id="comparison-title">One row per product owner</h2>
     </header>
     {route.products.map((product) => (
-      <article class={`p4-comparison-row p4-product--${product.name.toLowerCase()}`}>
+      <article class={`p4-comparison-row p4-product--${product.name.toLowerCase().split(" ").at(-1)}`}>
         <div class="p4-comparison-row__identity"><h3>{product.name}</h3><p>{product.role}</p></div>
         <dl class="p4-comparison-row__facts">
           <div><dt>Job</dt><dd>{product.job}</dd></div>

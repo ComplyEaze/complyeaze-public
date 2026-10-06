@@ -12,12 +12,12 @@ page wording must change.
 | Products/Pack: "no extension analytics or telemetry"; "No ComplyEaze account" | same | "no extension analytics or telemetry"; "no ComplyEaze, Axal, or Pack login" |
 | Home sample slip: "GST document uploaded: None" and "Pack saves the filed PDF to your computer and uploads no GST document"; "Password captured: No" | same Pack README | "no GST document upload in the local-download workflow"; "no GST Portal credential, OTP, CAPTCHA, cookie, or session-token capture" |
 | Home: "Tools work on pasted rows inside the browser tab and need no file upload"; Products/Tools: "No account or file upload is required, and pasted rows are not intentionally sent to ComplyEaze" | github.com/lamemustafa/complyeaze-tools `README.md` and `docs/privacy-local-first.md` (commit 726ec6e7ddf9fda1c38f221be6c950fafc330876) | "Files are processed in your browser. No account or file upload is required."; "Tool files are not intentionally sent to ComplyEaze by these tools." |
-| Products/Bridge: status "Unsigned preview; posting is off by default"; evidence link to the README "Privacy and safe diagnostics" section | Bridge `README.md` line 41 (posting off by default; commit 8fd8619560d2d3736d4f0fa0616cfef820ceb331); Bridge `README.md` lines 121-127 ("unsigned evaluation preview ... not code-signed or notarized") and the GitHub release `mcp-preview-0.3.0` notes ("an unsigned Bridge MCPB preview for evaluation only") | same |
-| Products/Bridge: "Reaches Tally on the same computer only. What the assistant reads goes to your AI provider, amounts included. Bridge has no tool to undo a posted voucher." | github.com/ComplyEaze/bridge `README.md`, opening paragraphs (commit 8fd8619560d2d3736d4f0fa0616cfef820ceb331) | "on `localhost` only. A remote Tally host is refused"; "What the assistant reads does reach the AI provider you chose"; README "neither setting removes amounts" (line 102); "Bridge has no tool to delete or undo a voucher it has posted" (line 42) |
+| Products/ComplyEaze Bridge: status "Not yet code-signed; posting is off by default in the extension" | github.com/ComplyEaze/bridge `README.md` at the released tag `mcp-v0.4.2` (commit 9121c23a483d415662280c4e38f330e340d74dd5), lines 23 and 43 | "Not yet code-signed; your computer may warn you before opening it."; "Posting is off by default in the extension." |
+| Products/ComplyEaze Bridge: "Local connection only: it talks to the Tally gateway on a loopback address and cannot be pointed at a remote Tally host. It cannot tell whether that local port is forwarded to another machine. Your AI provider sees what the assistant reads: company names, party names and amounts. ComplyEaze Bridge cannot undo a posted voucher." | github.com/ComplyEaze/bridge `README.md` at the released tag `mcp-v0.4.2` (commit 9121c23a483d415662280c4e38f330e340d74dd5), lines 34-37, 39-41 and 49-50 | "Local connection only. It talks to Tally's own XML gateway on a loopback address, so it cannot be pointed at a remote Tally host. It cannot tell whether that local port is forwarded to another machine; do not forward one across the internet."; "Your AI provider sees what the assistant reads ... company names, party names and amounts ... Amounts are always sent."; "ComplyEaze Bridge cannot undo a posted voucher (you correct it in Tally)" |
 | Products/Pack: "Public beta"; Pack description: filed GSTR-3B and GSTR-1 returns and the GSTR-2B statement | Pack `README.md`, "Status": the Store-published package is the `v0.5.0` beta, publication maintainer-observed; GSTR-2B "auto-drafted statements"; Chrome Web Store listing description "Beta: Save filed GSTR-1 and GSTR-3B returns and auto-drafted GSTR-2B statements locally" | Store package is a beta; 2B is a statement, its live gate "not fully closed" |
-| Home and Products: Bridge "local log of every action" and "approve before anything posts" | Bridge `README.md` (receipt log; native approval before posting) | README under "Is this for you": a receipt is appended to a log on your own machine for every tool call (line 28); one voucher per approval "in a dialog on your own machine. The assistant cannot approve it" (lines 58-60) |
+| Home and Products: ComplyEaze Bridge job ("Connects Claude Desktop to the TallyPrime running on your own computer ... prepares Journal, Payment, Receipt and Contra vouchers as a file") and proof ("Open source under Apache-2.0. Tool calls leave receipts in a log on your computer.") | github.com/ComplyEaze/bridge `README.md` at the released tag `mcp-v0.4.2` (commit 9121c23a483d415662280c4e38f330e340d74dd5), lines 4-9, 57 and 63 | "an MCP server that connects Claude Desktop to the TallyPrime running on your own computer ... You can ask about outstanding receivables and payables with ageing, the trial balance, ledger movement and vouchers ... it prepares Journal, Payment, Receipt and Contra vouchers as a file"; "Tool calls leave receipts in a log on your computer"; "Open source under Apache-2.0." |
 | /privacy/: "Visiting this website" | `.github/workflows/pages-deploy.yml` (GitHub Pages deploy of `apps/complyeaze/dist`); response headers 2026-09-30 (served by Cloudflare, Cloudflare bot-detection script injected); layout has no analytics code | request metadata and security signals are processed by GitHub Pages and Cloudflare |
-| Home and Products: Pack, Tools, Bridge and this website are open source under Apache 2.0 | GitHub license API for each repository | `Apache-2.0` for pack, complyeaze-tools, bridge |
+| Home and Products: Pack, Tools, ComplyEaze Bridge and this website are open source under Apache 2.0 | GitHub license API for each repository | `Apache-2.0` for pack, complyeaze-tools, bridge |
 
 ## Wording deliberately removed
 
@@ -26,13 +26,18 @@ page wording must change.
   its static host receives normal web request metadata and that Cloudflare
   security checks may process browser signals, so those phrasings could not be
   proven and were narrowed to what each source states.
-- The Bridge card no longer says it "connects only to Tally on the same
+- The ComplyEaze Bridge card no longer says it "connects only to Tally on the same
   computer", because the assistant's reads reach its AI provider.
+- On 2026-10-07 the ComplyEaze Bridge card dropped "preview" (twice), the bare
+  product short name, and "prepare vouchers that you approve before anything
+  posts". The released README no longer calls the package a preview, and a
+  prepared voucher file posts nothing by itself; the card now uses the README's
+  own sentences.
 
 ## Other notes
 
 - security@complyeaze.com is the private security channel, named by the owner on 2026-09-30 (SECURITY.md and the /contact/ "Sensitive report" card).
-- The word "free" was removed from the site on 2026-09-30 at the owner's direction, because none of the Pack, Tools or Bridge READMEs state a price.
+- The word "free" was removed from the site on 2026-09-30 at the owner's direction, because none of the Pack, Tools or ComplyEaze Bridge READMEs state a price.
 - /contact/ and /privacy/ name contact@complyeaze.com, the address the owner gave on 2026-09-30. The "leave those details out of a first email" line is a safety default added by the assistant for the owner to confirm.
 - "Install Pack" links to the Chrome Web Store listing, which loads and is titled
   "ComplyEaze Pack: GST Return Downloader" (checked 2026-09-30).

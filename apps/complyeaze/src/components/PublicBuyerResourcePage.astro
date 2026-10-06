@@ -35,7 +35,7 @@ const isContact = route.urlPath === "/contact/";
     <header class="p4-section-heading"><h2 id="product-destinations-title">Continue with the product that owns the work</h2></header>
     <div>
       {products.map((product) => (
-        <article class={`p4-product--${product.name.toLowerCase()}`}>
+        <article class={`p4-product--${product.name.toLowerCase().split(" ").at(-1)}`}>
           <h3>{product.name}</h3>
           <p>{product.job}</p>
           <dl>
