@@ -16,7 +16,7 @@ const expectedProductActions = new Map([
   ["Axal", undefined],
   ["Pack", "/products/pack/"],
   ["Tools", "/products/tools/"],
-  ["Bridge", "https://bridge.complyeaze.com/"],
+  ["ComplyEaze Bridge", "https://bridge.complyeaze.com/"],
 ]);
 
 const requiredSourceFiles = [

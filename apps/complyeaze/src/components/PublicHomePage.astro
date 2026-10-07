@@ -28,7 +28,8 @@ const repositories = [
   { label: "ComplyEaze/complyeaze-public", href: "https://github.com/ComplyEaze/complyeaze-public" },
 ];
 
-const productSlug = (product: PublicProduct) => product.name.toLowerCase();
+// The last word of the name, so "ComplyEaze Bridge" keeps the class its styles are written for.
+const productSlug = (product: PublicProduct) => product.name.toLowerCase().split(" ").at(-1);
 ---
 
 <article class="ce-home" data-p4-register="true">
