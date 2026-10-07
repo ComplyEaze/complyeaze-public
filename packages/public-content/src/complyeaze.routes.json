@@ -116,8 +116,8 @@
           "role": "TallyPrime connector for Claude Desktop",
           "job": "Connects Claude Desktop to the TallyPrime running on your own computer. You can ask about outstanding receivables and payables with ageing, the trial balance, ledger movement and vouchers. It prepares Journal, Payment, Receipt and Contra vouchers as a file. If you turn posting on in the extension, it posts them one at a time, after you approve each one.",
           "proof": "Open source under Apache-2.0. Tool calls leave receipts in a log on your computer.",
-          "boundary": "Local connection only: it talks to the Tally gateway on a loopback address and cannot be pointed at a remote Tally host. It cannot tell whether that local port is forwarded to another machine. Your AI provider sees what the assistant reads, just as it sees the rest of the conversation. Amounts are always sent. ComplyEaze Bridge cannot undo a posted voucher. If you installed an earlier version, check the posting setting: an earlier default may still be saved as on.",
-          "status": "Not yet code-signed; posting is off by default in the extension",
+          "boundary": "Local connection only: it talks to the Tally gateway on a loopback address and cannot be pointed at a remote Tally host. It cannot tell whether that local port is forwarded to another machine. Your AI provider sees what the assistant reads, just as it sees the rest of the conversation. You can mask party names or drop narration; amounts are always sent. Posting has three known limits; one is that ComplyEaze Bridge cannot undo a posted voucher. If you installed an earlier version, check the posting setting: an earlier default may still be saved as on.",
+          "status": "Still being developed and not yet code-signed; posting is off by default in the extension",
           "href": "https://bridge.complyeaze.com/",
           "evidence": {
             "label": "Read how ComplyEaze Bridge handles your books, and its source",
